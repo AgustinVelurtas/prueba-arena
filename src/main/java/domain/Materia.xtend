@@ -22,6 +22,7 @@ class Materia extends Entity implements Cloneable{
 	
 	new(){
 		notas = new ArrayList
+		ubicacion = new UbicacionMateria 
 	}
 	
 	def crear(Boolean aprobado, Integer anio, String prof, String modalidad, String nivel){
