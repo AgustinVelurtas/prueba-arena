@@ -4,3 +4,4 @@ target
 xtend-gen
 .project
 /src/main/generated-sources/
+/src/test/generated-sources/
