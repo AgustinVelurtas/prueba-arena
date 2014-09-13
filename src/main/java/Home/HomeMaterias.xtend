@@ -19,6 +19,8 @@ class HomeMaterias extends CollectionBasedHome<Materia> {
 		var ArrayList<Nota> notas = new ArrayList
 		var ArrayList<Nota> notas2 = new ArrayList
 		var ArrayList<Nota> notas3 = new ArrayList
+		var ArrayList<Nota> notas4 = new ArrayList
+		var ArrayList<Nota> notas5 = new ArrayList
 		
 		notas.add((new Nota).crear("12/05/2014","Parcial 1", true))
 		notas.add((new Nota).crear("13/07/2014","Parcial 2", false))
@@ -34,8 +36,16 @@ class HomeMaterias extends CollectionBasedHome<Materia> {
 		notas3.add((new Nota).crear("07/08/2014","Parcial 2", false))
 		
 		this.create("Algoritmos", 2012, "Patricia Mayor", true, notas3, getUbicacion("Anual", "1er Nivel"))
-		this.create("Analisis de Sistemas", 2013, "Ines Casanovas", true, notas, getUbicacion("Anual", "2do Nivel"))
-		this.create("Sistemas Operativos", 2014, "Scarfiello", false, notas, getUbicacion("2do Cuatrimestre", "3er Nivel"))
+		
+		notas4.add((new Nota).crear("14/04/2014","tp", true))
+		notas4.add((new Nota).crear("30/05/2014","tp 2", false))
+		
+		this.create("Analisis de Sistemas", 2013, "Ines Casanovas", true, notas4, getUbicacion("Anual", "2do Nivel"))
+		
+		notas5.add((new Nota).crear("25/04/2014","Parcial 1", false))
+		notas5.add((new Nota).crear("30/06/2014","tp", true))
+		
+		this.create("Sistemas Operativos", 2014, "Scarfiello", false, notas5, getUbicacion("2do Cuatrimestre", "3er Nivel"))
 	}
 	
 	def void create(String pnombre, Integer anio, String nombreProfesor, Boolean pfinal, ArrayList<Nota> notasss, UbicacionMateria ubicacion) {
