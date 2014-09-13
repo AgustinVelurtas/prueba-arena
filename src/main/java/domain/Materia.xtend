@@ -3,6 +3,7 @@ package domain
 import java.util.ArrayList
 import org.uqbar.commons.utils.Observable
 import org.uqbar.commons.model.Entity
+import org.uqbar.commons.model.ObservableUtils
 
 @Observable
 class Materia extends Entity implements Cloneable{
@@ -33,12 +34,14 @@ class Materia extends Entity implements Cloneable{
 		
 	def agregarNota(Nota nota){
 		notas.add(nota)
+		ObservableUtils.firePropertyChanged(this, "notas", notas)
 	}
 	
 	def borrarNota(Nota nota){
 		var Nota notita = new Nota
 		notita = notas.findFirst[notaAux | notaAux.descripcion == nota.descripcion]
 		notas.remove(notita)
+		ObservableUtils.firePropertyChanged(this, "notas", notas)
 
 	}
 	
